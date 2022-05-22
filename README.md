@@ -1,2 +1,2 @@
 # Solving-Sudoku-Using-DL
-Solving Sudoku Using Image Processing , Digit Recognition and Deep Learning
+Solving Sudoku Using Image Detection, Digit Recognition and Deep Learning
