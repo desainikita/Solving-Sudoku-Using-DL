@@ -7,16 +7,16 @@ def get_imageRecognition_model(input_shape, activation_functions, padding, outpu
    # Neural network architecture for digit image recognition
 
     model = keras.models.Sequential()
-    model.add((Conv2D(60,kernel_size=(5,5),input_shape=input_shape ,padding = padding ,activation = activation_functions[0])))
-    model.add((Conv2D(60, kernel_size=(5,5),padding=padding,activation=activation_functions[0])))
+    model.add((Conv2D(54,kernel_size=(5,5),input_shape=input_shape ,padding = padding ,activation = activation_functions[0])))
+    model.add((Conv2D(54, kernel_size=(5,5),padding=padding,activation=activation_functions[0])))
     model.add(MaxPooling2D(pool_size=(2,2)))
-
-    model.add((Conv2D(30,kernel_size=(3,3),padding=padding, activation=activation_functions[0])))
-    model.add((Conv2D(30, kernel_size= (3,3), padding=padding, activation=activation_functions[0])))
+    model.add((Conv2D(32,kernel_size=(3,3),padding=padding, activation=activation_functions[0])))
+    model.add((Conv2D(32,kernel_size=(3,3),padding=padding, activation=activation_functions[0])))
+    model.add((Conv2D(32, kernel_size= (3,3), padding=padding, activation=activation_functions[0])))
     model.add(MaxPooling2D(pool_size=(2,2), strides=(2,2)))
     model.add(Dropout(0.5))
     model.add(Flatten())
-    model.add(Dense(500,activation = activation_functions[0]))
+    model.add(Dense(300,activation = activation_functions[0]))
 
     # model.add(Dense(500,activation = activation_functions[0]))
     model.add(Dropout(0.5))
@@ -29,9 +29,10 @@ def get_Sudoku_model(input_shape, activation_functions, padding):
 
     model = keras.models.Sequential()
 
-    model.add(Conv2D(64, kernel_size=(3,3), activation = activation_functions[0], padding=padding, input_shape=input_shape))
+    model.add(Conv2D(60, kernel_size=(3,3), activation = activation_functions[0], padding=padding, input_shape=input_shape))
     model.add(BatchNormalization())
-    model.add(Conv2D(64, kernel_size=(3,3), activation = activation_functions[0], padding=padding))
+    model.add(Conv2D(60, kernel_size=(3,3), activation = activation_functions[0], padding=padding))
+    model.add(Conv2D(60, kernel_size=(3,3), activation = activation_functions[0], padding=padding))
     model.add(BatchNormalization())
     model.add(Conv2D(128, kernel_size=(1,1), activation = activation_functions[0], padding=padding))
     model.add(Flatten())
