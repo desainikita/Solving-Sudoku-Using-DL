@@ -8,3 +8,16 @@ We have used two deep learning models that have been trained and are being used 
  
 ![alt text](https://github.com/desainikita/Solving-Sudoku-Using-DL/blob/main/Screen%20Shot%202022-05-22%20at%209.43.36%20PM.png?raw=true)
 
+# Getting Started
+
+Folder Structure
+
+| Attempt | #1 | #2 |
+| :---: | :---: | :---: |
+| Seconds | 301 | 283 |
+
+
+How to use
+
+
+
