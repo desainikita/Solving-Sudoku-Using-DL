@@ -45,10 +45,10 @@ def preprocess( dataset):
     # training_data =[lambda x : ((cv.equalizeHist(cv.cvtColor(x,cv.COLOR_BGR2GRAY)))/255) for x in training_data]
     # validation_data =[lambda x : cv.equalizeHist(cv.cvtColor(x,cv.COLOR_BGR2GRAY))/255 for x in validation_data]
     # testing_data =[lambda x : cv.equalizeHist(cv.cvtColor(x,cv.COLOR_BGR2GRAY))/255 for x in testing_data]
-    def Prep(img):
+    def Prepare(img):
       img = cv.cvtColor(img,cv.COLOR_BGR2GRAY) #making image grayscale
-      img = cv.equalizeHist(img) #Histogram equalization to enhance contrast
-      img = img/255 #normalizing
+      img = cv.equalizeHist(img)
+      img = img/255
       return img
 
     # training_data = np.array(training_data)
@@ -57,9 +57,9 @@ def preprocess( dataset):
 
     print(training_data.shape)
     # print(training_data.shape)
-    train_X = np.array(list(map(Prep, training_data)))
-    test_X = np.array(list(map(Prep, testing_data)))
-    valid_X= np.array(list(map(Prep, validation_data)))
+    train_X = np.array(list(map(Prepare, training_data)))
+    test_X = np.array(list(map(Prepare, testing_data)))
+    valid_X= np.array(list(map(Prepare, validation_data)))
 
     train_X = train_X.reshape(train_X.shape[0], train_X.shape[1], train_X.shape[2],1)
     test_X = test_X.reshape(test_X.shape[0], test_X.shape[1], test_X.shape[2],1)
@@ -71,74 +71,35 @@ def preprocess( dataset):
     return train_X, valid_X, test_X
 
 
-def get_data(file): 
-
-    random_state_ =  42
-
-    data_frame = pd.read_csv(file)
-    
-
-    features_raw = data_frame['quizzes']
-    labels_raw = data_frame['solutions']
-    features = []
-    label = []
-
-    for i in features_raw:
-
-        x = np.array([int(j) for j in i]).reshape((9,9,1))
-        features.append(x)
-  
-    features = np.array(features)
-    features = (features)/9
-    features -= .5
-
-    for j in labels_raw:
-        each_label = np.array([int(j) for j in i]).reshape((9 * 9,1)) - 1
-        label.append(each_label)   
-    
-    label = np.array(label)
-    del(features_raw)
-    del(labels_raw)    
-
-    print("changed 42")
-    x_train, x_test, y_train, y_test = train_test_split(features, label, test_size=0.2, random_state=42)
-    
-    return x_train, x_test, y_train, y_test
-
-
 def load_sudoku_data(file): 
 
     data = pd.read_csv(file)
 
-    feat_raw = data['quizzes']
-    label_raw = data['solutions']
+    raw_features = data['quizzes']
+    raw_labels = data['solutions']
 
-    feat = []
-    label = []
+    features = []
+    labels = []
 
-    for i in feat_raw:
+    for i in raw_features:
     
-        x = np.array([int(j) for j in i]).reshape((9,9,1))
-        feat.append(x)
+        each_feature = np.array([int(j) for j in i]).reshape((9,9,1))
+        features.append(each_feature)
     
-    feat = np.array(feat)
-    feat = feat/9
-    feat -= .5    
+    features = np.array(features)
+    features = features/9
+    features -= .5    
     
-    for i in label_raw:
+    for i in raw_labels:
     
-        x = np.array([int(j) for j in i]).reshape((81,1)) - 1
-        label.append(x)   
+        each_label = np.array([int(j) for j in i]).reshape((81,1)) - 1
+        labels.append(each_label)   
     
-    label = np.array(label)
+    labels = np.array(labels)
     
-    del(feat_raw)
-    del(label_raw)    
+    del(raw_features)
+    del(raw_labels)    
 
-    x_train, x_test, y_train, y_test = train_test_split(feat, label, test_size=0.2, random_state=42)
+    x_train, x_test, y_train, y_test = train_test_split(features, labels, test_size=0.2, random_state=42)
     
     return x_train, x_test, y_train, y_test
-
-
-
-
