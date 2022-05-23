@@ -37,11 +37,17 @@ How to use :
     2) Copy the "Digits" Folder and paste inside the "dataset" folder in this project
   
 2. Run
-```
-function test() {
-  console.log("notice the blank line before this function?");
-}
-```
+    This code has been implemented in Google Colab. After opening Google colab, follow below steps
+    1) Open main.ipynb
+    2) Uncomment the first two blocks to clone the repository
+    ```
+    git clone "https://github.com/desainikita/Solving-Sudoku-Using-DL"
+    
+    import os
+    os.chdir("/content/Solving-Sudoku-Using-DL")
+
+    ```
+    3) Run all cells
 
 
 
