@@ -10,14 +10,44 @@ We have used two deep learning models that have been trained and are being used 
 
 # Getting Started
 
-Folder Structure
+Folder Structure :
 
-| Attempt | #1 | #2 |
-| :---: | :---: | :---: |
-| Seconds | 301 | 283 |
+| File name | Description & purpose |
+| :---: | :---: |
+| main.ipynb | Main .ipynb file ( Starting point of execution) |
+| model.py | Contains deep learning model definitions |
+| process_image.py | Contains functions for image pre-processing ( reframing, warping, croppping, splitting , contouring ) |
+| load_data | Loads data for training of both models |
+| sudoku.py | Solving sudoku puzzle using Deep neural net model |
+| dataset/Digits | Must contain the dataset prepared from the official Chars74K dataset |
+| cropnum/ | Intermediate folder created in code for saving cropped puzzle images |
+| models/ | Pre-trained models saved after training for digit recognition and for solving the puzzle|
+| pickled_files/ | Saved model training history for analysis later |
+| sudoku_samples/ | Some sample sudoku puzzle images |
+| utility/ | Utility functions for pickling and plotting |
 
 
-How to use
+How to use :
+
+1. Creating the dataset
+    We have used a subset of the Chars74K dataset containing images of only digits in different fonts.
+    ( Reference for the Char74k dataset : http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/#download )
+    Steps for dataset creation:
+    1) Download "Digits" Folder from "https://drive.google.com/drive/folders/1A09-g7j5c0XV9R-IUUdZl9wqqXdsSTDI?usp=sharing"
+    2) Copy the "Digits" Folder and paste inside the "dataset" folder in this project
+  
+2. Run
+    This code has been implemented in Google Colab. After opening Google colab, follow below steps
+    1) Open main.ipynb
+    2) Uncomment the first two blocks to clone the repository
+    ```
+    git clone "https://github.com/desainikita/Solving-Sudoku-Using-DL"
+    
+    import os
+    os.chdir("/content/Solving-Sudoku-Using-DL")
+
+    ```
+    3) Run all cells
 
 
 
