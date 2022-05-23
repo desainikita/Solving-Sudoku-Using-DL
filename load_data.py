@@ -47,7 +47,7 @@ def preprocess( dataset):
     # testing_data =[lambda x : cv.equalizeHist(cv.cvtColor(x,cv.COLOR_BGR2GRAY))/255 for x in testing_data]
     def Prepare(img):
       img = cv.cvtColor(img,cv.COLOR_BGR2GRAY) #making image grayscale
-      img = cv.equalizeHist(img) #Histogram equalization to enhance contrast
+      img = cv.equalizeHist(img)
       img = img/255
       return img
 
