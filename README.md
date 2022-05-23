@@ -47,7 +47,7 @@ How to use :
     os.chdir("/content/Solving-Sudoku-Using-DL")
 
     ```
-    3) Run all cells
+3. Run all cells
 
 
 
