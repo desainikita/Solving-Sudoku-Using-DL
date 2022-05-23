@@ -12,9 +12,16 @@ We have used two deep learning models that have been trained and are being used 
 
 Folder Structure
 
-| Attempt | #1 | #2 |
-| :---: | :---: | :---: |
-| Seconds | 301 | 283 |
+| File name | Description|
+| :---: | :---: |
+| main.ipynb | Main .ipynb file ( Starting point of execution) |
+| model.py | Contains deep learning model definitions - one for digit recognition and one for solving the puzzle |
+| process_image.py | Contains functions for image pre-processing ( reframing, warping, croppping, splitting , contouring ) |
+| load_data | Loads data for training of both models |
+| main.ipynb | Main .ipynb file ( Starting point of execution) |
+| main.ipynb | Main .ipynb file ( Starting point of execution) |
+| main.ipynb | Main .ipynb file ( Starting point of execution) |
+
 
 
 How to use
