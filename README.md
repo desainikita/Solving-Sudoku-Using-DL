@@ -34,7 +34,9 @@ How to use :
     ( Reference for the Char74k dataset : http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/#download )
     Steps for dataset creation:
     1) Download "Digits" Folder from "https://drive.google.com/drive/folders/1A09-g7j5c0XV9R-IUUdZl9wqqXdsSTDI?usp=sharing"
-    2) Copy the "Digits" Folder and paste inside the "dataset" folder in this project
+    2) Copy the "Digits" Folder and paste inside the "dataset" folder in this project.
+    3) Download sudoku dataset from " https://www.kaggle.com/datasets/rohanrao/sudoku"
+    4) Copy and paste sudoku.csv into the "dataset" folder in this project.
   
 2. Run
     This code has been implemented in Google Colab. After opening Google colab, follow below steps
